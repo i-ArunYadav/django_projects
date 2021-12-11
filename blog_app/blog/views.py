@@ -11,6 +11,7 @@ from django.views.generic import (
 from .models import Post
 
 
+
 def home(request):
     context = {
         'posts': Post.objects.all()
@@ -18,6 +19,8 @@ def home(request):
     return render(request, 'blog/home.html', context)
 
 
+
+#POSTLISTview
 class PostListView(ListView):
     model = Post
     template_name = 'blog/home.html'  # <app>/<model>_<viewtype>.html
